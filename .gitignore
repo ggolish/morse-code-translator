@@ -1,6 +1,9 @@
 #   Executable
 morse
 
+# Dev Scripts
+makegen.sh
+
 #   C
 
 # Prerequisites
