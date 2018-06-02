@@ -1,0 +1,23 @@
+{
+  "name": "morse",
+  "version": "1.0.0",
+  "description": "A Mores Code translator implemented in C. Currently only translates plain text into binary digits representing the various sequence, listed below.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ggolish/morse-code-translator.git"
+  },
+  "author": "Gage Golish",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ggolish/morse-code-translator/issues"
+  },
+  "homepage": "https://github.com/ggolish/morse-code-translator#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "fastcall": "^0.2.6"
+  }
+}
