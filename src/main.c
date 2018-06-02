@@ -39,7 +39,7 @@ static void translate_file(char *path)
 
     printf("%s\n", ciphertext);
     free(plaintext);
-    free(ciphertext);
+    morse_free();
 }
 
 static void repl()
