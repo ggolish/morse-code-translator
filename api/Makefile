@@ -1,4 +1,4 @@
-CFLAGS = -Wall -g -Iinclude
+CFLAGS = -Wall -g -Iinclude -fPIC
 CC = gcc
 
 .SUFFIXES: .c .o
@@ -8,16 +8,15 @@ CC = gcc
 
 OBJS = \
 	src/fileio.c	\
-	src/main.c	\
 	src/morse_translate.c	\
 	src/scanner.c	\
 
-TARGET = morse
+TARGET = libmorse.so
 
 default: $(TARGET)
 
 $(TARGET): $(OBJS:.c=.o)
-	$(CC) $(CFLAGS) $^ -o $(TARGET)
+	$(CC) -shared -Wl,-soname,$(TARGET) $^ -o $(TARGET) -lc
 
 fileio.o: src/fileio.c include/fileio.h
 
