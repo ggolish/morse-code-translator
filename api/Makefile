@@ -18,6 +18,9 @@ default: $(TARGET)
 $(TARGET): $(OBJS:.c=.o)
 	$(CC) -shared -Wl,-soname,$(TARGET) $^ -o $(TARGET) -lc
 
+morse: $(TARGET)
+	gcc -g -Wall -Iinclude -Wl,-R -Wl,/home/ggolish/Developer/c/morse/api -o morse src/main.c libmorse.so
+
 fileio.o: src/fileio.c include/fileio.h
 
 main.o: src/main.c include/fileio.h include/morse_translate.h
@@ -33,5 +36,6 @@ clean:
 	rm -f src/fileio.o
 	rm -f src/main.o
 	rm -f src/morse_translate.o
-	rm -f src/scanner.o
 	rm -f $(TARGET)
+	rm -f morse
+	rm -f src/scanner.o
